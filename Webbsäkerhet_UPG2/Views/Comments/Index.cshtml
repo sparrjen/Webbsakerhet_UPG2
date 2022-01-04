@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Comment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Comments</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+@foreach (var comment in Model)
+{
+
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Comment</h5>
+                <small>@comment.TimeStamp</small>
+            </div>
+            <p class="mb-1">@Html.Raw(comment.Message)</p>
+        </a>
+    </div>
+}

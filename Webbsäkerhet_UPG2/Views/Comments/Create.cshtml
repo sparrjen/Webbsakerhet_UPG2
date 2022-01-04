@@ -1,0 +1,29 @@
+﻿@model Webbsäkerhet_UPG2.Models.Comment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add your comment </h1>
+
+<hr />
+
+    <form asp-action="Create">
+        <div class="row">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" asp-for="Message"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="btn-css">
+                <button type="submit" value="Create" class="btn btn-primary ">Submit</button>
+            </div>
+         </div>
+    </form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
